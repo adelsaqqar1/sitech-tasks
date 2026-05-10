@@ -2,14 +2,14 @@ import requests
 
 base_url = "https://jsonplaceholder.typicode.com/posts"
 
-
+# Function to GET a post based on the post_id
 def get_post(post_id):
     print("GET")
     response = requests.get(f"{base_url}/{post_id}")
     print(response.status_code)
     print(response.json())
 
-
+# Function to create a new post
 def create_post():
     print("\nPOST")
     data = {
@@ -22,7 +22,7 @@ def create_post():
     print(response.json())
 
 
-
+# Function to update a post based on the post_id
 def update_post(post_id):
     print("\nPUT")
     updated_data = {
@@ -35,7 +35,7 @@ def update_post(post_id):
     print(response.json())
 
 
-
+# Function to delete a post based on the post_id
 def delete_post(post_id):
     print("\nDELETE")
     response = requests.delete(f"{base_url}/{post_id}")
